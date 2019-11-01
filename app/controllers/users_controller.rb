@@ -5,9 +5,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    redirect_to root_url
+    if @user.save
+      flash[:success] = "User created"
+      redirect_to root_url
+    else
+      render 'new'
+    end
   end
-
+  
   private
 
     def user_params
