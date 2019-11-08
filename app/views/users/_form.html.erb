@@ -1,31 +1,39 @@
-<h1>Sign-up</h1>
-<div class="ui form">
-		<%= form_with model: @user,  url: signup_path, local: true do |form| %>
-			<%= render 'shared/error_messages', object: @user %>
+<div class='ui center aligned grid'>
+	<div class='left aligned three wide column'>
 
-			<div class="field">
-				<%= form.label :name %>
-				<%= form.text_field :name %>
-			</div>
+		<h1>Sign-up</h1>
 
-			<div class="field">
-				<%= form.label :email %>
-				<%= form.text_field :email %>
-			</div>
-
-			<div class="field">
-				<%= form.label :password %>
-				<%= form.text_field :password %>
-			</div>
-
-			<div class="field">
-				<%= form.label :password_confirmation %>
-				<%= form.text_field :password_confirmation %>
-			</div>
+		<div class="ui stacked segment">
 		
-			<div class="field">
-				<%= form.submit "Sign-up", class: "ui button" %>	
-			</div>
-		<% end %>
+			<%= form_with model: @user,  url: signup_path, class: 'ui form', local: true do |form| %>
+				<%= render 'shared/error_messages', object: @user %>
+
+				<div class="field">
+					<%= form.label :name %>
+					<%= form.text_field :name %>
+				</div>
+
+				<div class="field">
+					<%= form.label :email %>
+					<%= form.text_field :email %>
+				</div>
+
+				<div class="field">
+					<%= form.label :password %>
+					<%= form.text_field :password %>
+				</div>
+
+				<div class="field">
+					<%= form.label :password_confirmation %>
+					<%= form.text_field :password_confirmation %>
+				</div>
+		
+				<div class="field">
+					<%= form.submit "Sign-up", class: "ui fluid primary button" %>	
+				</div>
+		</div>
+
+			<% end %>
+		
 	</div>
 </div>
