@@ -3,6 +3,7 @@ class PostController < ApplicationController
 
   def index
     @user = User.find_by(params[:id])
+    @posts = Post.page(params[:page])
   end
 
   def new
