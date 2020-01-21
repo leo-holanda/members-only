@@ -1,7 +1,8 @@
 <div class="ui secondary pointing menu">
   <% if logged_in? %>  
-    <%= link_to "Profile", user_path, class: "active item" %>
+    <%= link_to "Profile", user_path(params[:user_id]), class: "active item" %>
     <%= link_to "Users", '#', class: "item" %>	
+    <%= link_to "Post", user_post_index_url(params[:user_id]), class: "item" %>	
     <%= link_to "Log out", logout_path, method: :delete, class: "item" %>
   <% else %>
     <%= link_to "Members Only", root_path, class: "active item" %>
