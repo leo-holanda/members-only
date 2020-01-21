@@ -1,0 +1,23 @@
+<div class='ui center aligned grid'>
+	<div class='left aligned three wide column'>
+
+		<h1>Create Post</h1>
+
+		<div class="ui stacked segment">
+		
+			<%= form_with model: @post,  url: new_post_path, class: 'ui form', local: true do |form| %>
+
+				<div class="field">
+					<%= form.label :text %>
+					<%= form.text_field :text %>
+				</div>
+		
+				<div class="field">
+					<%= form.submit "Post", class: "ui fluid primary button" %>	
+				</div>
+		</div>
+
+			<% end %>
+		
+	</div>
+</div>
