@@ -1,9 +1,9 @@
 <div class="ui secondary pointing menu">
   <% if logged_in? %>  
-    <%= link_to "Profile", user_path(@user.id), class: "active item" %>
+    <%= link_to "Profile", user_path(session[:user_id]), class: "active item" %>
     <%= link_to "Users", '#', class: "item" %>	
-    <%= link_to "Posts", user_post_index_path(@user.id), class: "item" %>	
-    <%= link_to "Create Post", new_user_post_path(@user.id), class: "item" %>	
+    <%= link_to "Posts", user_post_index_path(session[:user_id]), class: "item" %>	
+    <%= link_to "Create Post", new_user_post_path(session[:user_id]), class: "item" %>	
     <%= link_to "Log out", logout_path, method: :delete, class: "item" %>
   <% else %>
     <%= link_to "Members Only", root_path, class: "active item" %>

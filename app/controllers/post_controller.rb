@@ -2,17 +2,15 @@ class PostController < ApplicationController
   before_action :require_login, only: [:new, :create]
 
   def index
-    @user = User.find_by(params[:id])
     @posts = Post.page(params[:page])
   end
 
   def new
-    @user = User.find_by(params[:id])
     @post = Post.new
   end
   
   def create
-    @post = Post.new(post_params)
+    @post = current_user.post.new(post_params)
     if @post.save
       flash[:success] = "Post created"
       redirect_to user_post_index_path
@@ -26,7 +24,7 @@ class PostController < ApplicationController
   def require_login
     unless logged_in?
       flash[:error] = "You must be logged in to access this section"
-      redirect_to root_path # halts request cycle
+      redirect_to root_path
     end
   end
 
