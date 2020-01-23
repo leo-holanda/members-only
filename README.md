@@ -1,24 +1,7 @@
-# README
+# Members Only
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project, a clubhouse is implemented. Logged users can create posts, as well as view who is the author of other posts. Non-logged users see only the content of the posts, but they cannot see the author. Concepts like authorization and authentication are worked on in this project, in addition to basic concepts like MVC and forms already seen in other projects.
 
-Things you may want to cover:
+In this project, I was able to use some features of the Semantic UI that bring a slightly more pleasant interface despite my little familiarity with the use of front-end frameworks.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can find the source of the project here: https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication
